@@ -1,0 +1,25 @@
+.panel.panel {
+  width: min(320px, calc(100vw - 24px));
+  padding: 20px;
+}
+.trigger.trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  min-width: 0;
+}
+.trigger > span { text-align: left; }
+.heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.heading h3 { margin: 0; font-size: 16px; font-weight: 500; }
+.close { display: grid; place-items: center; width: 36px; height: 36px; margin-right: -8px; }
+.description { margin: 12px 0 20px; color: #686a60; font-size: 12px; line-height: 1.8; }
+.row { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 0 0 24px; }
+.counter { display: flex; align-items: center; gap: 8px; }
+.counter button { display: grid; place-items: center; width: 40px; height: 40px; padding: 0; border: 1px solid #d4d2c9; border-radius: 4px; background: #fff; color: #465336; }
+.counter button:hover:not(:disabled) { background: #e8ecdd; }
+.counter button:disabled { opacity: .3; }
+.counter output { min-width: 24px; text-align: center; font-size: 16px; font-variant-numeric: tabular-nums; }
+.apply { display: flex; align-items: center; justify-content: center; gap: 12px; width: 100%; min-height: 48px; border-radius: 4px; padding: 12px; background: #465336; color: #fff; }
+@media (pointer: coarse) { .counter button { width: 44px; height: 44px; } }
