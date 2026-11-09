@@ -1,0 +1,47 @@
+.panel {
+  z-index: 100;
+  width: min(384px, calc(100vw - 24px));
+  max-height: var(--radix-popover-content-available-height, 90dvh);
+  overflow: auto;
+  padding: 20px;
+  border: 1px solid #d4d2c9;
+  border-radius: 8px;
+  background: #f7f5ef;
+  color: #252721;
+  box-shadow: 0 12px 40px #25272126;
+  font: 14px/1.5 'Noto Sans KR', sans-serif;
+}
+.panel :global(.date-picker-head) { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:16px; }
+.panel :global(.date-picker-head h3) { font-size:16px; font-weight:500; margin:0; }
+.panel :global(.icon-button) { display:grid; place-items:center; width:36px; height:36px; margin-left:auto; }
+.panel :global(.date-picker-values) { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:12px; background:#eeece4; border-radius:4px; margin-bottom:16px; }
+.panel :global(.date-picker-values small) { display:block; font-size:11px; color:#686a60; }
+.panel :global(.date-picker-values strong) { display:block; font-size:14px; font-weight:500; font-variant-numeric:tabular-nums; }
+.panel :global(.date-picker-hint) { font-size:12px; margin:16px 0; color:#686a60; }
+.panel :global(.pum-calendar) { width:100%; font-variant-numeric:tabular-nums; --rdp-accent-color:#465336; --rdp-range_middle-background-color:#e8ecdd; }
+.panel :global(.rdp-months), .panel :global(.rdp-month) { width:100%; max-width:none; position:relative; }
+.panel :global(.rdp-month_caption) { display:flex; align-items:center; justify-content:center; height:44px; padding:0 44px; }
+.panel :global(.rdp-caption_label) { font-size:15px; font-weight:500; }
+.panel :global(.rdp-nav) { position:absolute; inset:0 0 auto; display:flex; justify-content:space-between; height:44px; pointer-events:none; }
+.panel :global(.rdp-nav button) { pointer-events:auto; display:grid; place-items:center; width:40px; height:44px; padding:8px; }
+.panel :global(.rdp-chevron) { width:20px; height:20px; fill:#465336; }
+.panel :global(.rdp-month_grid) { width:100%; table-layout:fixed; border-collapse:collapse; }
+.panel :global(.rdp-weekday) { text-align:center; width:14.2857%; padding:0; height:36px; font-size:12px; font-weight:400; color:#686a60; }
+.panel :global(.rdp-day) { height:42px; padding:4px 0; text-align:center; vertical-align:middle; background:transparent!important; }
+.panel :global(.rdp-day_button) { display:grid; place-items:center; box-sizing:border-box; width:100%; height:34px; margin:0; padding:0; border:0; border-radius:0; font:500 14px/1 Arial,sans-serif; color:#252721; background:transparent; }
+.panel :global(.rdp-selected) { font-size:14px; font-weight:500; }
+.panel :global(.rdp-range_middle .rdp-day_button) { background:#e8ecdd; }
+.panel :global(.rdp-range_start .rdp-day_button), .panel :global(.rdp-range_end .rdp-day_button) { background:#465336; color:#fff; }
+.panel :global(.rdp-range_start .rdp-day_button) { border-radius:999px 0 0 999px; }
+.panel :global(.rdp-range_end .rdp-day_button) { border-radius:0 999px 999px 0; }
+.panel :global(.rdp-range_start.rdp-range_end .rdp-day_button) { border-radius:999px; }
+.panel :global(.rdp-disabled) { opacity:.3; }
+.panel :global(.rdp-outside:not(.rdp-selected)) { opacity:.4; }
+.panel :global(.rdp-day_button:focus-visible) { outline:2px solid #465336; outline-offset:1px; }
+.panel :global(.full) { width:100%; display:flex; align-items:center; justify-content:center; gap:12px; min-height:48px; padding:12px; background:#465336; color:#fff; border-radius:4px; }
+.trigger { min-width:0; font-size:14px!important; }
+.trigger > span { min-width:0; text-wrap:balance; line-height:1.5; }
+@media(max-width:760px) { .panel { padding:16px; } .trigger { font-size:12px!important; } }
+
+/* Optical centering: equalize the visible numeral and selected band. */
+.panel :global(.rdp-day_button) { padding-top: 2px; }
